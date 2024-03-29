@@ -6,8 +6,26 @@
 }
 
 :root {
-  --themeColor: 152, 255, 152;
+  --themeColor: 41, 185, 41;
+  --dark-bg: #121212;
+  --dark-text: #ffffff;
+  --dark-btn: #333333;
+  --dark-btn-text: #ffffff;
   /* Theme Color in (R,G,B) format */
+}
+
+
+
+.image-front{
+  width: 22rem;
+  border: 5px solid rgb(100, 30, 30);
+  border-radius: 50px;
+  margin: 10px;
+  float: right;
+}
+
+body, .btn {
+  transition: background-color 0.3s, color 0.3s;
 }
 
 html {
@@ -69,6 +87,7 @@ a {
   font-size: 1.8rem;
   border-radius: 5px;
   border: 2px solid rgba(var(--themeColor), 1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .message {
@@ -112,6 +131,18 @@ a {
   font-size: 1.6rem;
   border: none;
 }
+
+.btn-theme:hover,
+.btn-inv:hover {
+  background: rgba(var(--themeColor), 0.5); /* Lighten the background color */
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.2); /* Increase the shadow spread */
+  color: #000;
+}
+
+.btn-sm:hover {
+  transform: scale(1.05); /* Slightly increase the button size */
+}
+
 
 .main-container {
   max-width: 120rem;
@@ -240,6 +271,7 @@ a {
   box-shadow: 0 10px 100px -5px #eee;
   z-index: 1000;
   background: #fff;
+  border-bottom: 2px solid gray ;
 }
 
 .main-header__logo-container {
@@ -250,10 +282,9 @@ a {
 
 .main-header__logo-img-cont {
   margin-right: 1.5rem;
-  width: 4rem;
+  width: fit-content;
   height: 4rem;
   overflow: hidden;
-  border-radius: 10rem;
   background: rgba(var(--themeColor), 1);
 }
 

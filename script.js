@@ -148,3 +148,19 @@ formField.addEventListener("submit", function (event) {
     }
   );
 });
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  const isDarkMode = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Event listener for the dark mode toggle button
+document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+
+// Check for saved user preference
+window.onload = function() {
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+};
