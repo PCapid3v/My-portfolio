@@ -71,8 +71,8 @@
             I'm Pierluigi Capirci! A Software Developer Building Awesome Webapps And Websites That Powers The Internet
           </span>
         </h1>
-        <button class="btn btn-theme home-hero__btn-theme">Projects</button>
-        <button class="btn btn-inv home-hero__btn-theme">Contact</button>
+        <button class="btn btn-theme home-hero__btn-theme" onclick="location.href='./index.html#projects'">Projects</button>
+        <button class="btn btn-inv home-hero__btn-theme" onclick="location.href='./index.html#contact'">Contact</button>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@
         <span class="heading-secondary__sm"> About </span>
         <span class="heading-secondary__main">
           Here you will find more information about me, what I do, and list of my current skills in programming
-      </h2>
+      
       <div class="main-section__content">
         <div class="about__info">
           <div class="about__main-info">
@@ -91,26 +91,25 @@
             </h3>
             <p class="text-primary about__text-primary">
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Error, aliquid! Itaque corrupti magnam fugiat mollitia labore
-                magni saepe veritatis voluptatum alias fugit. Explicabo
-                ducimus sequi aut corporis odio repellendus? Lorem ipsum dolor
-                sit amet
+                🚀 Coding Bootcamp Graduate
+6 intensive months, transforming from coding newbie to full-stack aficionado. HTML, CSS, JavaScript, React, Node - you name it, I've tackled it! 💻
               </span>
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Error, aliquid! Itaque corrupti magnam fugiat mollitia labore
-                magni saepe veritatis voluptatum alias fugit. Explicabo
-                ducimus sequi aut corporis odio repellendus? Lorem ipsum dolor
-                sit amet
+                🌟 CompTIA A+ Certified
+A badge of honor in the tech world, showcasing my rock-solid IT foundation and insatiable appetite for learning. 🎓
               </span>
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Error, aliquid! Itaque corrupti magnam fugiat mollitia labore
-                magni saepe veritatis voluptatum alias fugit. Explicabo
-                ducimus sequi aut corporis odio repellendus? Lorem ipsum dolor
-                sit amet
+                😄 People-Person & Problem-Solver
+Thriving in teams, I bring an upbeat attitude, keen listening skills, and a knack for problem-solving to every project. Debugging? More like de-bugging out! 🐞
               </span>
+              <span>
+                💡 Innovator & Boundary-Pusher
+I don't just write code - I craft digital solutions that push the envelope. Each project is an opportunity to think outside the box and create something extraordinary. 🚀
+</span>
+<span>
+  If you're looking for a dedicated, quick-learning developer with a side of humor, look no further! Let's connect and build something amazing together. 🤝
+</span>
+            
             </p>
             <button class="btn btn-theme about__btn-theme">Projects</button>
           </div>
@@ -125,31 +124,12 @@
               <li class="about__skill">react</li>
               <li class="about__skill">node</li>
               <li class="about__skill">git</li>
-              <li class="about__skill">git</li>
               <li class="about__skill">vscode</li>
               <li class="about__skill">linux</li>
-              <li class="about__skill">react</li>
-              <li class="about__skill">node</li>
-              <li class="about__skill">git</li>
-              <li class="about__skill">vscode</li>
-              <li class="about__skill">linux</li>
-              <li class="about__skill">javascript</li>
-              <li class="about__skill">react</li>
-              <li class="about__skill">git</li>        
-              <li class="about__skill">vscode</li>
-              <li class="about__skill">linux</li>
-              <li class="about__skill">react</li>
-              <li class="about__skill">node</li>
-              <li class="about__skill">git</li>
-              <li class="about__skill">vscode</li>
-              <li class="about__skill">linux</li>
-              <li class="about__skill">javascript</li>
-              <li class="about__skill">react</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
   </section>
   <section class="skills-showcase">
     <ul class="skills-showcase__list">
@@ -344,21 +324,26 @@
       </h2>
       <div class="main-section__content">
         <div class="contact__form-cont">
-          <form class="contact__form">
+          <form id="contactForm" class="contact__form">
             <div class="contact__form-field">
               <label for="name" class="contact__form-field-label">Name</label>
-              <input placeholder="Enter Your Name" type="text" class="contact__form-field-input" />
+              <input placeholder="Enter Your Name" type="text" name="name" class="contact__form-field-input" />
             </div>
             <div class="contact__form-field">
-              <label for="name" class="contact__form-field-label">Email</label>
-              <input placeholder="Enter Your Email" type="text" class="contact__form-field-input" />
+              <label for="email" class="contact__form-field-label">Email</label>
+              <input placeholder="Enter Your Email" type="text" name="email" class="contact__form-field-input" />
             </div>
             <div class="contact__form-field">
-              <label for="name" class="contact__form-field-label">Message</label>
-              <textarea placeholder="Enter Your Message" name="message" id="" cols="30" rows="10"
-                class="contact__form-field-input"></textarea>
+              <label for="message" class="contact__form-field-label">Message</label>
+              <textarea placeholder="Enter Your Message" name="message" cols="30" rows="10" class="contact__form-field-input"></textarea>
             </div>
             <button type="submit" class="contact__form-submit">Submit</button>
+            <div id="successMessage" class="message success" style="display: none;">
+              Your message has been sent successfully!
+            </div>
+            <div id="errorMessage" class="message error" style="display: none;">
+              Oops! Something went wrong. Please try again later.
+            </div>
           </form>
           <div class="contact__form-visual"></div>
         </div>
@@ -400,14 +385,15 @@
               src="https://d33wubrfki0l68.cloudfront.net/7f29579dde49e02480372aa49f7189c5536b0118/34b92/assets/png/linkedin-ico.png"
               alt="" class="main-footer__social-link-icon" />
           </a>
-          <a href="#" class="main-footer__social-link">
-            <img src="./assets/icons8-pinterest-64.png" alt="" class="main-footer__social-link-icon" />
-          </a>
         </div>
       </div>
     </div>
   </footer>
   <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  emailjs.init('oE-uow4RoJGL2PzHG');
+</script>
 </body>
 
 </html>

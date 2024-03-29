@@ -111,31 +111,40 @@ const eventFire = (el, etype) => {
   }
 }
 
-themeColorSelector.addEventListener('click', () => {
-  eventFire(themeColorSelectorInput, 'input')
-})
-
-const setDynamicColor = (color) => {
-
-  const { r, g, b } = hexToRgb(`${color}`)
-  
-  root.style.setProperty('--themeColor', `${r},${g},${b}`);
-  //localStorage.setItem('color', color)
-}
-
-themeColorSelectorInput.addEventListener('input', (e) => {
-  setDynamicColor(e.target.value)
-})
-
-// if (localStorage.getItem('color')) {
-//   let userSelectedColor = localStorage.getItem('color')
-//   themeColorSelectorInput.value = userSelectedColor
-//   setDynamicColor(userSelectedColor)
-// }
-
 // ---
 const headerLogoConatiner = document.querySelector('.main-header__logo-container')
 
 headerLogoConatiner.addEventListener('click', () => {
   location.href = 'index.html'
 })
+
+const formField = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+const errorMessage = document.getElementById("errorMessage");
+
+formField.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  var templateParams = {
+    name: document.getElementsByName("name")[0].value,
+    email: document.getElementsByName("email")[0].value,
+    message: document.getElementsByName("message")[0].value,
+  };
+
+  emailjs.send("service_xhk7utf", "template_n4r7moo", templateParams).then(
+    function (response) {
+      console.log("Email sent successfully!", response.status, response.text);
+      successMessage.style.display = "block";
+      errorMessage.style.display = "none";
+
+      formField.reset();
+    },
+    function (error) {
+      console.log("Email sending failed.", error);
+      successMessage.style.display = "none";
+      errorMessage.style.display = "block";
+    
+
+    }
+  );
+});
