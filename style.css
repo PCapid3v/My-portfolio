@@ -109,6 +109,27 @@ a {
   border: 1px solid #f5c6cb;
 }
 
+.container {
+  position: relative;
+  text-align: center;
+  color: #000;
+  font-size: 5rem;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  border: 3px 0 solid gray;
+  background-color: #fff;
+}
+
+.transparent{
+  opacity: 0.5;
+}
+
 @media (max-width: 37.5em) {
   .btn {
     padding: 2rem 4rem;
